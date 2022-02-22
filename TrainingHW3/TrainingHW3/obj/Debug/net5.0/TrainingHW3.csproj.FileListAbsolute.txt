@@ -1,0 +1,16 @@
+C:\Users\nastyascherbinskaya\source\repos\TrainingHW3\TrainingHW3\bin\Debug\net5.0\TrainingHW3.exe
+C:\Users\nastyascherbinskaya\source\repos\TrainingHW3\TrainingHW3\bin\Debug\net5.0\TrainingHW3.deps.json
+C:\Users\nastyascherbinskaya\source\repos\TrainingHW3\TrainingHW3\bin\Debug\net5.0\TrainingHW3.runtimeconfig.json
+C:\Users\nastyascherbinskaya\source\repos\TrainingHW3\TrainingHW3\bin\Debug\net5.0\TrainingHW3.runtimeconfig.dev.json
+C:\Users\nastyascherbinskaya\source\repos\TrainingHW3\TrainingHW3\bin\Debug\net5.0\TrainingHW3.dll
+C:\Users\nastyascherbinskaya\source\repos\TrainingHW3\TrainingHW3\bin\Debug\net5.0\ref\TrainingHW3.dll
+C:\Users\nastyascherbinskaya\source\repos\TrainingHW3\TrainingHW3\bin\Debug\net5.0\TrainingHW3.pdb
+C:\Users\nastyascherbinskaya\source\repos\TrainingHW3\TrainingHW3\obj\Debug\net5.0\TrainingHW3.csproj.AssemblyReference.cache
+C:\Users\nastyascherbinskaya\source\repos\TrainingHW3\TrainingHW3\obj\Debug\net5.0\TrainingHW3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nastyascherbinskaya\source\repos\TrainingHW3\TrainingHW3\obj\Debug\net5.0\TrainingHW3.AssemblyInfoInputs.cache
+C:\Users\nastyascherbinskaya\source\repos\TrainingHW3\TrainingHW3\obj\Debug\net5.0\TrainingHW3.AssemblyInfo.cs
+C:\Users\nastyascherbinskaya\source\repos\TrainingHW3\TrainingHW3\obj\Debug\net5.0\TrainingHW3.csproj.CoreCompileInputs.cache
+C:\Users\nastyascherbinskaya\source\repos\TrainingHW3\TrainingHW3\obj\Debug\net5.0\TrainingHW3.dll
+C:\Users\nastyascherbinskaya\source\repos\TrainingHW3\TrainingHW3\obj\Debug\net5.0\ref\TrainingHW3.dll
+C:\Users\nastyascherbinskaya\source\repos\TrainingHW3\TrainingHW3\obj\Debug\net5.0\TrainingHW3.pdb
+C:\Users\nastyascherbinskaya\source\repos\TrainingHW3\TrainingHW3\obj\Debug\net5.0\TrainingHW3.genruntimeconfig.cache
