@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Y+f2WjIQfhHIRgDxySAt/dHt68HO35LyL9CByIzOahc4HoJxwHW2EIvNxQxSeJtthRYOsj8v3hYlF7XPeket4w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\nastyascherbinskaya\\source\\repos\\TrainingHW6\\TrainingHW6\\TrainingHW6.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nastyascherbinskaya\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}
