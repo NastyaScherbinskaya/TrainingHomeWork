@@ -6,22 +6,19 @@ namespace TrainingHW5
     {
         static void Main(string[] args)
         {
+            Book book1 = new Book ( "Элинор Портер - Поллианна", 105, "567" );
+            Book book2 = new Book ( "Эрих Мария Ремарк - Триумфальная арка", 415, "223643" );
+            Book book3 = new Book ( "Антуана де Сент-Экзюпери - Маленький принц", 60, "67439" );
+            Book book4 = new Book ( "Александр Дюма - Граф Монте-Кристо", 782, "7432" );
+            Book book5 = new Book ( "Александра Грин - Алые паруса", 128, "603245" );
 
+            Book[] books = { book1, book2, book3, book4, book5 };
 
-            Books book1 = new Books ( "Элинор Портер - Поллианна", 105, "567" );
-            Books book2 = new Books ( "Эрих Мария Ремарк - Триумфальная арка", 415, "223643" );
-            Books book3 = new Books ( "Антуана де Сент-Экзюпери - Маленький принц", 60, "67439" );
-            Books book4 = new Books ( "Александр Дюма - Граф Монте-Кристо", 782, "7432" );
-            Books book5 = new Books ( "Александра Грин - Алые паруса", 128, "603245" );
-
-            Books[] books = { book1, book2, book3, book4, book5 };
-
-            foreach (Books item in books)
+            foreach (Book item in books)
             {
-                Console.WriteLine(item.Display_Books());
+                item.DisplayBooks();
             }
         }
-
 
     }
 }
