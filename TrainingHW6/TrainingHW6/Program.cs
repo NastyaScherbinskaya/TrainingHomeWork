@@ -6,9 +6,6 @@ namespace TrainingHW6
     {
         static void Main(string[] args)
         {
-
-            int number = 1;
-
             Buyer buyer1 = new Buyer_cash();
             Buyer buyer2 = new Buyer_credit_card();
             Buyer buyer3 = new Buyer_cash();
@@ -18,13 +15,9 @@ namespace TrainingHW6
             Buyer[] buyer = { buyer1, buyer2, buyer3, buyer4, buyer5 };
 
             foreach (Buyer item in buyer)
-
             {
-                Console.WriteLine($"Покупатель {number} - {item.Pay()}\n");
-                number++;
-            }
-
-           
+                item.Pay();
+            }   
         }
     }
 }

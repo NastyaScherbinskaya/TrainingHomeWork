@@ -7,12 +7,10 @@ using System.Threading.Tasks;
 namespace TrainingHW6
 {
     class Buyer_cash: Buyer
-
     {
-        public override string Pay() 
-        
+        public override void Pay() 
         {
-            return "Покупатель за наличные";
+            Console.WriteLine("Buyer by cash");
         }
     }
 }

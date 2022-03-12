@@ -8,7 +8,6 @@ namespace TrainingHW6
 {
     abstract class Buyer
     {
-        public abstract string Pay();
-
+       public abstract void Pay();
     }
 }

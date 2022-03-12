@@ -7,12 +7,10 @@ using System.Threading.Tasks;
 namespace TrainingHW6
 {
     class Buyer_debit_card: Buyer
-
     {
-        public override string Pay()
-
+        public override void Pay()
         {
-            return "Покупатель с дебетовой картой";
+            Console.WriteLine("Buyer by debit card");
         }
     }
 }

@@ -8,11 +8,9 @@ namespace TrainingHW6
 {
     class Buyer_credit_card : Buyer
     {
-
-        public override string Pay()
-
+        public override void Pay()
         {
-            return "Покупатель с кредитной картой";
+            Console.WriteLine("Buyer by credit card");
         }
     }
 }
