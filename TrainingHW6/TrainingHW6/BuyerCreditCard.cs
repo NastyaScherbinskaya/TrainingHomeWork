@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace TrainingHW6
 {
-    class Buyer_debit_card: Buyer
+    class BuyerCreditCard : Buyer
     {
         public override void Pay()
         {
-            Console.WriteLine("Buyer by debit card");
+            Console.WriteLine("Buyer by credit card");
         }
     }
 }

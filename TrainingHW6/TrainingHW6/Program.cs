@@ -6,11 +6,11 @@ namespace TrainingHW6
     {
         static void Main(string[] args)
         {
-            Buyer buyer1 = new Buyer_cash();
-            Buyer buyer2 = new Buyer_credit_card();
-            Buyer buyer3 = new Buyer_cash();
-            Buyer buyer4 = new Buyer_debit_card();
-            Buyer buyer5 = new Buyer_debit_card();
+            Buyer buyer1 = new BuyerCash();
+            Buyer buyer2 = new BuyerCreditCard();
+            Buyer buyer3 = new BuyerCash();
+            Buyer buyer4 = new BuyerDebitCard();
+            Buyer buyer5 = new BuyerDebitCard();
 
             Buyer[] buyer = { buyer1, buyer2, buyer3, buyer4, buyer5 };
 

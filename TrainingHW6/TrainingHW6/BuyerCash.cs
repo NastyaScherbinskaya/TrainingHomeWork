@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrainingHW6
 {
-    class Buyer_cash: Buyer
+    class BuyerCash: Buyer
     {
         public override void Pay() 
         {
