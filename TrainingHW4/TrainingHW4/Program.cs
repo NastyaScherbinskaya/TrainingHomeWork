@@ -4,41 +4,25 @@ namespace TrainingHW4
 {
     class Program
     {
-        static void FindMinMaxValue(int[] array)
-        {
-            int Min = array[0];
-            int Max = array[0];
-
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (array[i] > Max)
-                {
-                    Max = array[i];
-                }
-                if (array[i] < Min)
-                {
-                    Min = array[i];
-                }
-            }
-            Console.WriteLine($"\n Max value : {Max}, Min value : {Min}\n");
-        }
-
         static void ChangeMaxMin(int[] array)
         {
-            int Max = array[0];
-            int Min = array[0];
+             int Max = array[0];
+             int Min = array[0];
 
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (array[i] > Max)
-                {
-                    Max = array[i];
-                }
-                if (array[i] < Min)
-                {
-                    Min = array[i];
-                }
-            }
+             for (int i = 0; i < array.Length; i++)
+             {
+                 if (array[i] > Max)
+                 {
+                     Max = array[i];
+                 }
+                 if (array[i] < Min)
+                 {
+                     Min = array[i];
+                 }
+             }
+
+            Console.WriteLine($"\n Max value : {Max}, Min value : {Min}\n");
+
             for (int i = 0; i < array.Length; i++)
             {
                 if (array[i] == Max)
@@ -64,14 +48,12 @@ namespace TrainingHW4
         static void Main(string[] args)
         {
             int[] array1 = { 1, 4, 5, 7, 5, -2, 56 };
-
-            FindMinMaxValue(array1);
+           
             ChangeMaxMin(array1);
             OutputChangedArray(array1);
 
-            int[] array2 = { 0, 4, 9, 33, 3, -6, 15, 3, 25 };
+            int[] array2 = { 0, 4, 9, 33, 3, -6, 15, 33, 25 };
     
-            FindMinMaxValue(array2);
             ChangeMaxMin(array2);
             OutputChangedArray(array2);
         }
