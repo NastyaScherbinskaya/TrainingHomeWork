@@ -35,7 +35,6 @@ namespace TrainingHW4
                 }
             }
         }
-
         static void OutputChangedArray(int[] array)
         {
             Console.WriteLine("Changed array:\n");
@@ -44,7 +43,6 @@ namespace TrainingHW4
                 Console.WriteLine(array[i]);
             }
         }
-
         static void Main(string[] args)
         {
             int[] array1 = { 1, 4, 5, 7, 5, -2, 56 };
