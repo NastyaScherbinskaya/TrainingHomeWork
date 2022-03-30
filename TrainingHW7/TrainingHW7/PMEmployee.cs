@@ -9,6 +9,10 @@ namespace TrainingHW7
     class PMEmployee : Employee, IAssignTask
     {
         public PMEmployee(string fName, string lName, string posit) : base(fName, lName, posit) { }
+      
+        public void AssignTask()
+        {
+            Console.WriteLine("I can assign task");
+        }
     }
-
 }

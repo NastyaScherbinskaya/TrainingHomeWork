@@ -10,5 +10,9 @@ namespace TrainingHW7
     {
         public QATeamLead(string fName, string lName, string posit) : base(fName, lName, posit) { }
 
+        public void AssignTask()
+        {
+            Console.WriteLine("I can assign task");
+        }
     }
 }

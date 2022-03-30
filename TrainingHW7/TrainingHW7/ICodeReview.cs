@@ -6,5 +6,8 @@ using System.Threading.Tasks;
 
 namespace TrainingHW7
 {
-    interface ICodeReview{ }
+    public interface ICodeReview
+    {
+        public void CodeReview();
+    }
 }

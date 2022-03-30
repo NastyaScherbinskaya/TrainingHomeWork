@@ -25,6 +25,13 @@ namespace TrainingHW7
                     Console.WriteLine($"Info: First Name - {employee.FirstName}, Last Name - {employee.LastName}, Position - {employee.Position}");
                 }
             }
-        }
+
+            //Verify that intarface methods works
+            DevTeamLead dev = new DevTeamLead("Maxim", "Torop", "DEV Team lead");
+            Console.WriteLine($"\nInfo");
+            dev.CodeReview();
+            dev.CodeWrite();
+            dev.AssignTask();    
+         }
     }
 }

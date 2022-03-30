@@ -6,5 +6,10 @@ using System.Threading.Tasks;
 
 namespace TrainingHW7
 {
-    interface IAssignTask { }
+    public interface IAssignTask
+    { 
+        public void AssignTask();
+    }
+   
+
 }
