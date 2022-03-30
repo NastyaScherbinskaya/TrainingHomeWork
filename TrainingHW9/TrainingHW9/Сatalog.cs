@@ -20,26 +20,21 @@ namespace TrainingHW9
 
             foreach (var item in result)
             {
-             Console.WriteLine($"Book name - {item.BookName}, Publication date - {item.PublicationDate}, Id - {item.BookId}, Writer - {item.Writer}");
+                Console.WriteLine($"Book name - {item.BookName}, Publication date - {item.PublicationDate.ToShortDateString()}, Id - {item.BookId}, Writer - {item.Writer}");
             }
         }
         public void WritersThatHaveBooksInCatalog(Writer[] writers)
         {
             Console.WriteLine("\nList of the writers:\n");
-
-            foreach (var i in writers)
-            {
-                foreach (var book in Books)
-                {
-                    if (i.FirstName + " " + i.LastName == book.Writer)
-                    {
-                        Console.WriteLine($"{ book.Writer}");
-                        break;
-                    }
-                }
-            }
+            var authors = Books.Select(x => x.Writer).Distinct();
+        
+                 foreach (var item in authors)
+                 {
+                     Console.WriteLine($"{item}");
+                 }
+             
         }
-        public void FindBooksByWriterAndPublicationDate(string name, int date)
+        public void FindBooksByWriterAndPublicationDate(Writer name, DateTime date)
         {
             var WriterName = name;
             var PublishDate = date;
@@ -50,7 +45,7 @@ namespace TrainingHW9
 
             foreach (var item in result)
             {
-                Console.WriteLine($"Book name - {item.BookName}, Publication date - {item.PublicationDate}, Id - {item.BookId}, Writer - {item.Writer}");
+                Console.WriteLine($"Book name - {item.BookName}, Publication date - {item.PublicationDate.ToShortDateString()}, Id - {item.BookId}, Writer - {item.Writer}");
             }
         }
         public void SortByWriterBirthDate(Writer[] writers)
@@ -63,5 +58,6 @@ namespace TrainingHW9
                 Console.WriteLine($"First Name - {item.FirstName}, Last Name - {item.LastName}, Birthdate - {item.BirthDate.ToShortDateString()}");
             }
         }
+
     }
 }

@@ -12,6 +12,10 @@ namespace TrainingHW9
         public string LastName { get; }
         public DateTime BirthDate { get; }
 
+        public string FullName()
+        {
+            return FirstName + " " + LastName;
+        }
         public Writer(string fname, string lname, DateTime dateTime)
         {
             FirstName = fname;

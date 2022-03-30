@@ -9,11 +9,11 @@ namespace TrainingHW9
     class Book
     {
         public string BookName { get; }
-        public int PublicationDate { get; }
+        public DateTime PublicationDate { get; }
         public int BookId { get; }
-        public string Writer { get; }
+        public Writer Writer { get; }
 
-        public Book(string name, int date, int id, string author)
+        public Book(string name, DateTime date, int id, Writer author)
         {
             BookName = name;
             PublicationDate = date;

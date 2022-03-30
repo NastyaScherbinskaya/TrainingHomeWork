@@ -8,14 +8,14 @@ namespace TrainingHW9
         {
             Catalog catalog = new Catalog();
 
-            catalog.Books.Add(new Book("Триумфальная арка", 1945, 1, "Эрих Мария Ремарк"));
-            catalog.Books.Add(new Book("Три товарища", 1936, 2, "Эрих Мария Ремарк"));
-            catalog.Books.Add(new Book("Искра Жизни", 1952, 3, "Эрих Мария Ремарк"));
-            catalog.Books.Add(new Book("Мастер и Маргарита", 1967, 4, "Михаил Булгаков"));
-            catalog.Books.Add(new Book("Преступление и наказание", 1866, 5, "Федор Достоевский"));
-            catalog.Books.Add(new Book("Маленький принц", 1943, 6, "Антуан де Сент-Экзюпери"));
-            catalog.Books.Add(new Book("Портрет Дориана Грея", 1890, 7, "Оскар Уайльд"));
-            catalog.Books.Add(new Book("Гордость и предубеждение", 1813, 8, "Джейн Остин"));
+            catalog.Books.Add(new Book("Триумфальная арка", DateTime.Parse("01.01.1946"), 1, "Эрих Мария Ремарк"));
+            catalog.Books.Add(new Book("Три товарища", DateTime.Parse("03.10.1936"), 2, "Эрих Мария Ремарк"));
+            catalog.Books.Add(new Book("Искра Жизни", DateTime.Parse("23.05.1952"), 3, "Эрих Мария Ремарк"));
+            catalog.Books.Add(new Book("Мастер и Маргарита", DateTime.Parse("09.08.1967"), 4, "Михаил Булгаков"));
+            catalog.Books.Add(new Book("Преступление и наказание", DateTime.Parse("16.08.1866"), 5, "Федор Достоевский"));
+            catalog.Books.Add(new Book("Маленький принц", DateTime.Parse("30.01.1943"), 6, "Антуан де Сент-Экзюпери"));
+            catalog.Books.Add(new Book("Портрет Дориана Грея", DateTime.Parse("10.10.1890"), 7, "Оскар Уайльд"));
+            catalog.Books.Add(new Book("Гордость и предубеждение", DateTime.Parse("04.06.1813"), 8, "Джейн Остин"));
 
             var writer1 = new Writer("Эрих Мария","Ремарк", DateTime.Parse("22.06.1898"));
             var writer2 = new Writer("Михаил", "Булгаков", DateTime.Parse("15.05.1891"));
@@ -30,8 +30,8 @@ namespace TrainingHW9
             catalog.SortByBookName();
             catalog.WritersThatHaveBooksInCatalog(writers);
 
-            var WriterForFind = "Эрих Мария Ремарк";
-            var PublicationDate = 2000;
+            Writer WriterForFind = "Эрих Мария Ремарк";
+            DateTime PublicationDate = DateTime.Parse("01.01.1940");
 
             catalog.FindBooksByWriterAndPublicationDate(WriterForFind, PublicationDate);
             catalog.SortByWriterBirthDate(writers);
