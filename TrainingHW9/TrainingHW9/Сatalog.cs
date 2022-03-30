@@ -20,32 +20,31 @@ namespace TrainingHW9
 
             foreach (var item in result)
             {
-                Console.WriteLine($"Book name - {item.BookName}, Publication date - {item.PublicationDate.ToShortDateString()}, Id - {item.BookId}, Writer - {item.Writer}");
+                Console.WriteLine($"Book name - {item.BookName}, Publication date - {item.PublicationDate.ToShortDateString()}, Id - {item.BookId}, Writer - {item.WriterName}");
             }
         }
         public void WritersThatHaveBooksInCatalog(Writer[] writers)
         {
             Console.WriteLine("\nList of the writers:\n");
-            var authors = Books.Select(x => x.Writer).Distinct();
+            var authors = Books.Select(x => x.WriterName).Distinct();
         
                  foreach (var item in authors)
                  {
                      Console.WriteLine($"{item}");
-                 }
-             
+                 }        
         }
-        public void FindBooksByWriterAndPublicationDate(Writer name, DateTime date)
+        public void FindBooksByWriterAndPublicationDate(string name, DateTime date)
         {
             var WriterName = name;
             var PublishDate = date;
 
-            var result = Books.Where(x => x.Writer == WriterName && x.PublicationDate > PublishDate);
+            var result = Books.Where(x => x.WriterName == WriterName && x.PublicationDate > PublishDate);
 
             Console.WriteLine($"\nBooks of the {WriterName} published after {PublishDate} year :\n");
 
             foreach (var item in result)
             {
-                Console.WriteLine($"Book name - {item.BookName}, Publication date - {item.PublicationDate.ToShortDateString()}, Id - {item.BookId}, Writer - {item.Writer}");
+                Console.WriteLine($"Book name - {item.BookName}, Publication date - {item.PublicationDate.ToShortDateString()}, Id - {item.BookId}, Writer - {item.WriterName}");
             }
         }
         public void SortByWriterBirthDate(Writer[] writers)
@@ -58,6 +57,5 @@ namespace TrainingHW9
                 Console.WriteLine($"First Name - {item.FirstName}, Last Name - {item.LastName}, Birthdate - {item.BirthDate.ToShortDateString()}");
             }
         }
-
     }
 }

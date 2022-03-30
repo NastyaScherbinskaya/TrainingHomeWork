@@ -30,7 +30,7 @@ namespace TrainingHW9
             catalog.SortByBookName();
             catalog.WritersThatHaveBooksInCatalog(writers);
 
-            Writer WriterForFind = "Эрих Мария Ремарк";
+            var WriterForFind ="Эрих Мария Ремарк";
             DateTime PublicationDate = DateTime.Parse("01.01.1940");
 
             catalog.FindBooksByWriterAndPublicationDate(WriterForFind, PublicationDate);

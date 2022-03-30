@@ -11,14 +11,14 @@ namespace TrainingHW9
         public string BookName { get; }
         public DateTime PublicationDate { get; }
         public int BookId { get; }
-        public Writer Writer { get; }
+        public string WriterName { get; }
 
-        public Book(string name, DateTime date, int id, Writer author)
+        public Book(string name, DateTime date, int id, string author)
         {
             BookName = name;
             PublicationDate = date;
             BookId = id;
-            Writer = author;
+            WriterName = author;
         }
     }
 }
