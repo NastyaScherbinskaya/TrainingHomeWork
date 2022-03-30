@@ -11,11 +11,13 @@ namespace TrainingHW7
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Position { get; set; }
-        public Employee(string fName, string lName, string posit)
+        public int TaxId { get; set; }
+        public Employee(string fName, string lName, string posit, int tId)
           {
               FirstName = fName;
               LastName = lName;
               Position = posit;
+              TaxId = tId;
           }
     }
 }

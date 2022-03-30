@@ -8,7 +8,7 @@ namespace TrainingHW7
 {
     class QAAutomationTeamLead : QAAutomationEmployee, ICodeReview, ICodeWrite, IAssignTask
     {
-        public QAAutomationTeamLead(string fName, string lName, string posit) : base(fName, lName, posit) { }
+        public QAAutomationTeamLead(string fName, string lName, string posit, int tId) : base(fName, lName, posit, tId) { }
         public void CodeWrite()
         {
             Console.WriteLine("I can write code");
@@ -21,5 +21,5 @@ namespace TrainingHW7
         {
             Console.WriteLine("I can review code");
         }
-    } 
+    }
 }

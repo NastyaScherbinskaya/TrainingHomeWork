@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32126.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainingHW7", "TrainingHW7\TrainingHW7.csproj", "{7AF4A653-208F-4DDD-9CEE-DF6E5F386790}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrainingHW8", "TrainingHW7\TrainingHW8.csproj", "{7AF4A653-208F-4DDD-9CEE-DF6E5F386790}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

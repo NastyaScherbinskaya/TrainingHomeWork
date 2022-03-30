@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 namespace TrainingHW7
 {
     public interface IAssignTask
-    { 
+    {
         public void AssignTask();
     }
-   
-
 }
