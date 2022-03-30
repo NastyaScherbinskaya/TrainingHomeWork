@@ -17,13 +17,10 @@ namespace TrainingHW7.Comparer
                     return 1;
                 }
             }
-
             if (x is not IAssignTask && y is not IAssignTask)
             {
                return 0;
             }
-
-            else
             {
                return -1;
             }

@@ -14,11 +14,13 @@ namespace TrainingHW7.Comparer
             {
                 return 1;
             }
-            else if (x.TaxId == y.TaxId)
+            if (x.TaxId == y.TaxId)
             {
                 return 0;
             }
-            else return -1;
+            {
+                return -1;
+            }
         }
     }
 }

@@ -14,11 +14,10 @@ namespace TrainingHW7.Comparer
             {
                 return -1;
             }
-            else if (x.FirstName[0] == y.FirstName[0])
+            if (x.FirstName[0] == y.FirstName[0])
             {
                 return 0;
-            }
-            else 
+            } 
             {
                 return 1;
             }

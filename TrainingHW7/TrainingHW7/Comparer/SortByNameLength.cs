@@ -10,15 +10,17 @@ namespace TrainingHW7.Comparer
     {
         public int Compare(Employee x, Employee y)
         {
-            if ((x.FirstName.Length + x.LastName.Length) < (y.FirstName.Length + y.LastName.Length))
+            var xFullName = x.FirstName.Length + x.LastName.Length;
+            var yFullName = y.FirstName.Length + y.LastName.Length;
+
+            if (xFullName < yFullName)
             {
                 return 1;
             }
-            else if ((x.FirstName.Length + x.LastName.Length) == (y.FirstName.Length + y.LastName.Length))
+            if (xFullName == yFullName)
             {
                 return 0;
             }
-            else
             {
                 return -1;
             }
