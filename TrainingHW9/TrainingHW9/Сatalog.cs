@@ -20,31 +20,31 @@ namespace TrainingHW9
 
             foreach (var item in result)
             {
-                Console.WriteLine($"Book name - {item.BookName}, Publication date - {item.PublicationDate.ToShortDateString()}, Id - {item.BookId}, Writer - {item.WriterName}");
+                Console.WriteLine($"Book name - {item.BookName}, Publication date - {item.PublicationDate.ToShortDateString()}, Id - {item.BookId}, Writer - {item.Writer.FullName()}");
             }
         }
         public void WritersThatHaveBooksInCatalog(Writer[] writers)
         {
             Console.WriteLine("\nList of the writers:\n");
-            var authors = Books.Select(x => x.WriterName).Distinct();
+            var authors = Books.Select(x => x.Writer.FullName()).Distinct();
         
                  foreach (var item in authors)
                  {
                      Console.WriteLine($"{item}");
                  }        
         }
-        public void FindBooksByWriterAndPublicationDate(string name, DateTime date)
+        public void FindBooksByWriterAndPublicationDate(Writer writer, DateTime date)
         {
-            var WriterName = name;
+            var Writer = writer;
             var PublishDate = date;
 
-            var result = Books.Where(x => x.WriterName == WriterName && x.PublicationDate > PublishDate);
+            var result = Books.Where(x => x.Writer == Writer && x.PublicationDate > PublishDate);
 
-            Console.WriteLine($"\nBooks of the {WriterName} published after {PublishDate} year :\n");
+            Console.WriteLine($"\nBooks of the {Writer.FullName()} published after {PublishDate.ToShortDateString()} year :\n");
 
             foreach (var item in result)
             {
-                Console.WriteLine($"Book name - {item.BookName}, Publication date - {item.PublicationDate.ToShortDateString()}, Id - {item.BookId}, Writer - {item.WriterName}");
+                Console.WriteLine($"Book name - {item.BookName}, Publication date - {item.PublicationDate.ToShortDateString()}, Id - {item.BookId}, Writer - {item.Writer.FullName()}");
             }
         }
         public void SortByWriterBirthDate(Writer[] writers)
