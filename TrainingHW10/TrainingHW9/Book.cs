@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace TrainingHW9
 {
-    class Book
+    public class Book
     {
         public string BookName { get; }
         public DateTime PublicationDate { get; }
         public int BookId { get; }
+
         public Writer Writer { get; }
 
         public Book(string name, DateTime date, int id, Writer author)

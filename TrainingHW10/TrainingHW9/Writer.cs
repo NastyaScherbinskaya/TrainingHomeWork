@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrainingHW9
 {
-    class Writer
+    public class Writer
     {
         public string FirstName { get; }
         public string LastName { get; }
