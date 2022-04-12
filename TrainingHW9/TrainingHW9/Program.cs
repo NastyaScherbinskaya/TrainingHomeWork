@@ -28,7 +28,7 @@ namespace TrainingHW9
             Writer[] writers = {writer1, writer2, writer3, writer4, writer5, writer6};
 
             catalog.SortByBookName();
-            catalog.WritersThatHaveBooksInCatalog(writers);
+            catalog.WritersThatHaveBooksInCatalog();
 
             var WriterForFind = writer1;
             DateTime PublicationDate = DateTime.Parse("01.01.1940");

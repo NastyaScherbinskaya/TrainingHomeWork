@@ -23,7 +23,7 @@ namespace TrainingHW9
                 Console.WriteLine($"Book name - {item.BookName}, Publication date - {item.PublicationDate.ToShortDateString()}, Id - {item.BookId}, Writer - {item.Writer.FullName()}");
             }
         }
-        public void WritersThatHaveBooksInCatalog(Writer[] writers)
+        public void WritersThatHaveBooksInCatalog()
         {
             Console.WriteLine("\nList of the writers:\n");
             var authors = Books.Select(x => x.Writer.FullName()).Distinct();
