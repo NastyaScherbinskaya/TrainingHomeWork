@@ -21,6 +21,7 @@ namespace TrainingHW7.Comparer
             {
                 return 0;
             }
+            else
             {
                 return -1;
             }
