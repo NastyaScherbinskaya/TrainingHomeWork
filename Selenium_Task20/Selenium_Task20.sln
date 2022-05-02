@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selenium_Task20", "Selenium_Task20\Selenium_Task20.csproj", "{9AFF5315-6312-4D6A-90DA-BFB50DB1E6AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{842F71D2-5995-4E96-B9AB-C32421964160}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9AFF5315-6312-4D6A-90DA-BFB50DB1E6AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AFF5315-6312-4D6A-90DA-BFB50DB1E6AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AFF5315-6312-4D6A-90DA-BFB50DB1E6AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AFF5315-6312-4D6A-90DA-BFB50DB1E6AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{842F71D2-5995-4E96-B9AB-C32421964160}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{842F71D2-5995-4E96-B9AB-C32421964160}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{842F71D2-5995-4E96-B9AB-C32421964160}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{842F71D2-5995-4E96-B9AB-C32421964160}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5DC3BF08-7111-49AF-9CC7-8A61284B9960}
+	EndGlobalSection
+EndGlobal
