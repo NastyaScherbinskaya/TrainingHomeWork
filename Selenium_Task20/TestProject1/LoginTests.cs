@@ -2,11 +2,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using Selenium_Task20;
+using System.Threading;
 
 namespace TestProject1
 {
     [TestClass]
-    public class UnitTest1
+    public class LoginTests
     {
         public IWebDriver driver;
 
@@ -46,7 +47,14 @@ namespace TestProject1
         By id = By.Id("passp-field-passwd");
         By name = By.ClassName("Textinput-Control");
         By nane = By.Name("passwd");
-        By sss = By.CssSelector("#passp-field-passwd");
+        By css = By.CssSelector("#passp-field-passwd");
+
+        //avatar image on Login page 
+        By tag = By.TagName("a");
+
+        //Learn more link on Login page 
+        By linkFull = By.LinkText("Learn more");
+        By linkPart = By.PartialLinkText("Learn");
     }
 }
 
