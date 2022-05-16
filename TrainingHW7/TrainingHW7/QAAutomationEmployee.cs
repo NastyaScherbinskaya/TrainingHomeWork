@@ -8,11 +8,11 @@ namespace TrainingHW7
 {
     class QAAutomationEmployee : Employee, ICodeWrite
     {
-        public QAAutomationEmployee(string fName, string lName, string posit) : base(fName, lName, posit) { }
-
+        public QAAutomationEmployee(string fName, string lName, string posit, int tId) : base(fName, lName, posit, tId) { }
         public void CodeWrite()
         {
             Console.WriteLine("I can write code");
         }
     }
+
 }

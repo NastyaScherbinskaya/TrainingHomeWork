@@ -8,6 +8,6 @@ namespace TrainingHW7
 {
     class BAEmployee : Employee
     {
-        public BAEmployee(string fName, string lName, string posit) : base(fName, lName, posit) { }
+        public BAEmployee(string fName, string lName, string posit, int tId) : base(fName, lName, posit, tId) { }
     }
 }

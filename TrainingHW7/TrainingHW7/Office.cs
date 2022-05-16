@@ -13,6 +13,13 @@ namespace TrainingHW7
             {
                 Employees = new List<Employee>();
             }
-      }
+        public void Info(List<Employee> Employees)
+        {
+            foreach (Employee employee in Employees)
+            {
+                Console.WriteLine($"Info: First Name - {employee.FirstName}, Last Name - {employee.LastName}, Position - {employee.Position}, TaxId - {employee.TaxId} ");
+            }
+        }
+    }
     
 }

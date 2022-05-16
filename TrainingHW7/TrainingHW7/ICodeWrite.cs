@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrainingHW7
 {
-    public interface ICodeWrite 
+    public interface ICodeWrite
     {
         public void CodeWrite();
     }

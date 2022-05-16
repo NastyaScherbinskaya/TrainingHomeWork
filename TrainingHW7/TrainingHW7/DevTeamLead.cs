@@ -8,8 +8,7 @@ namespace TrainingHW7
 {
     class DevTeamLead : DevEmployee, IAssignTask, ICodeReview, ICodeWrite
     {
-        public DevTeamLead(string fName, string lName, string posit) : base(fName, lName, posit) { }
-
+        public DevTeamLead(string fName, string lName, string posit, int tId) : base(fName, lName, posit, tId) { }
         public void AssignTask()
         {
             Console.WriteLine("I can assign task");
@@ -23,6 +22,4 @@ namespace TrainingHW7
             Console.WriteLine("I can write code");
         }
     }
-
-
 }
