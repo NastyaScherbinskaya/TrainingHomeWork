@@ -24,35 +24,28 @@ namespace LoginTests
         }
 
         [Test]
-        public void SuccessfulLogin()
+        [TestCase("kostyukevitch-marija", "kostyukevitch_marija")]
+        public void SuccessfulLogin(string username, string password)
         {
             HomePage homePage = new HomePage(driver);
             LoginPage loginPage = homePage.GoToLoginPage();
-
-            var username = "kostyukevitch-marija";
-            var password = "kostyukevitch_marija";
 
             loginPage.GoToCabinet(username, password);
 
             Assert.IsTrue(driver.FindElement(By.XPath("//span[@class='avatar__image  avatar__image-server0']")).Displayed);
         }
-    }
 
-    //Class for Task2
-    public class Variables
-    {
-        //Password field on Login page 
-        By Xpath = By.XPath("//input[@type='password']");
-        By id = By.Id("passp-field-passwd");
-        By name = By.ClassName("Textinput-Control");
-        By nane = By.Name("passwd");
-        By css = By.CssSelector("#passp-field-passwd");
+        [Test]
+        [TestCase("kostyukevitch-marija", "kostyukevitch_marija")]
+        public void LogOut(string username, string password)
+        {
+            HomePage homePage = new HomePage(driver);
+            LoginPage loginPage = homePage.GoToLoginPage();
 
-        //avatar image on Login page 
-        By tag = By.TagName("a");
-
-        //Learn more link on Login page 
-        By linkFull = By.LinkText("Learn more");
-        By linkPart = By.PartialLinkText("Learn");
+            loginPage.GoToCabinet(username, password);
+            driver.FindElement(By.XPath("//a[@class='home-link usermenu-link__control home-link_black_yes']")).Click();
+            driver.FindElement(By.XPath("//a[@aria-label='Выйти']")).Click();
+            Assert.IsTrue(driver.FindElement(By.XPath("//div[contains(text(), 'Войти')]")).Displayed);
+        }
     }
 }
