@@ -17,7 +17,7 @@ namespace LoginTests
             driver = new ChromeDriver();
             driver.Url = "https://www.yandex.com";
             Screenshot screenshot = ((ITakesScreenshot)driver).GetScreenshot();
-            screenshot.SaveAsFile(@"C:\Users\nastyascherbinskaya\Desktop\Screenshot.jpg");
+            screenshot.SaveAsFile("./Screenshot/screenshot.jpg", ScreenshotImageFormat.Jpeg);
         }
 
         [TearDown]
