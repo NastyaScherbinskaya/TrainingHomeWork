@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Selenium_Task20\Selenium_Task20.csproj" />
+    <ProjectReference Include="..\Selenium_Task20\Selenium_Task70.csproj" />
   </ItemGroup>
 
 </Project>

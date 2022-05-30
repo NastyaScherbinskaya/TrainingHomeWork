@@ -1,7 +1,7 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using Selenium_Task20;
+using Selenium_Task70;
 using System.Threading;
 
 namespace LoginTests
@@ -27,24 +27,25 @@ namespace LoginTests
         [TestCase("kostyukevitch-marija", "kostyukevitch_marija")]
         public void SuccessfulLogin(string username, string password)
         {
-            HomePage homePage = new HomePage(driver);
-            LoginPage loginPage = homePage.GoToLoginPage();
+            HomePage homepage = new HomePage(driver);
+            LoginPage loginPage = homepage.GoToLoginPage();
 
             loginPage.GoToCabinet(username, password);
 
-            Assert.IsTrue(driver.FindElement(By.XPath("//span[@class='avatar__image  avatar__image-server0']")).Displayed);
+            Assert.IsTrue(homepage.UserAvatar().Displayed);
         }
 
         [Test]
         [TestCase("kostyukevitch-marija", "kostyukevitch_marija")]
         public void LogOut(string username, string password)
         {
-            HomePage homePage = new HomePage(driver);
-            LoginPage loginPage = homePage.GoToLoginPage();
+            HomePage homepage = new HomePage(driver);
+            LoginPage loginPage = homepage.GoToLoginPage();
 
             loginPage.GoToCabinet(username, password);
-            loginPage.Logout();
-            Assert.IsTrue(driver.FindElement(By.XPath("//div[contains(text(), 'Войти')]")).Displayed);
+
+            homepage.Logout();
+            Assert.IsTrue(homepage.LoginTitle().Displayed);
         }
     }
 }

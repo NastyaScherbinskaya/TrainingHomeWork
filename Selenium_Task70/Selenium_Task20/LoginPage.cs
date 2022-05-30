@@ -6,9 +6,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 
-
-namespace Selenium_Task20
+namespace Selenium_Task70
 {
     public class LoginPage
     {
@@ -27,15 +27,11 @@ namespace Selenium_Task20
         {
             driver.FindElement(UsernameFieldLocator).SendKeys(username);
             driver.FindElement(LoginButtonLocator).Click();
-            Thread.Sleep(5000);
+            new System.Threading.ManualResetEvent(false).WaitOne(5000);
+
             driver.FindElement(passwordFieldLocator).SendKeys(password);
             driver.FindElement(LoginButtonLocator).Click();
-            Thread.Sleep(5000);
-        }
-        public void Logout()
-        {
-            driver.FindElement(By.XPath("//a[@class='home-link usermenu-link__control home-link_black_yes']")).Click();
-            driver.FindElement(By.XPath("//a[@aria-label='Выйти']")).Click();
+            new System.Threading.ManualResetEvent(false).WaitOne(5000);
         }
     }
 }

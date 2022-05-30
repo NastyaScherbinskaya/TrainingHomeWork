@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace Selenium_Task20
+namespace Selenium_Task70
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
         }
     }
 }
