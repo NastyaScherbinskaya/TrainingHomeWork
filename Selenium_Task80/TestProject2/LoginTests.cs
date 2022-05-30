@@ -4,6 +4,8 @@ using OpenQA.Selenium.Chrome;
 using Selenium_Task80;
 using System.Threading;
 using System;
+using System.IO;
+using System.Text.RegularExpressions;
 
 namespace LoginTests
 {
@@ -17,7 +19,8 @@ namespace LoginTests
             driver = new ChromeDriver();
             driver.Url = "https://www.yandex.com";
             Screenshot screenshot = ((ITakesScreenshot)driver).GetScreenshot();
-            screenshot.SaveAsFile("./Screenshot/screenshot.jpg", ScreenshotImageFormat.Jpeg);
+            var Path = Directory.GetCurrentDirectory().Replace("TestProject2\\bin\\Debug\\net5.0", "") + "Screenshot\\";
+            screenshot.SaveAsFile(Path + "screenshot" + "_" + DateTime.Now.ToString("dd_MMMM_hh_mm_ss_tt") + ".jpg", ScreenshotImageFormat.Jpeg);
         }
 
         [TearDown]
