@@ -14,11 +14,14 @@ namespace LoginTests
     public class Task50Tests
     {
         public IWebDriver driver;
+        public WebDriverWait wait;
 
         [SetUp]
         public void BeginTest()
         {
             driver = new ChromeDriver();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
         }
 
         [TearDown]
@@ -34,13 +37,11 @@ namespace LoginTests
         {
             driver.Url = "https://www.yandex.com";
 
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             HomePage homePage = new HomePage(driver);
             LoginPage loginPage = homePage.GoToLoginPage();
 
             loginPage.GoToCabinet(username, password);
 
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             wait.Until(e=>e.FindElement(By.XPath("//span[@class='username desk-notif-card__user-name']")));
 
             Assert.IsTrue(driver.FindElement(By.XPath("//span[@class='avatar__image  avatar__image-server0']")).Displayed);
@@ -49,16 +50,25 @@ namespace LoginTests
         [Test]
         public void MultiSelect()
         {
-            string[] ExpectedResult = { "Florida", "New York", "Texas" };
-
             driver.Url = "https://demo.seleniumeasy.com/basic-select-dropdown-demo.html";
-            var select1 = driver.FindElement(By.XPath("//option[@value='Florida']")).Text;
-            var select2 = driver.FindElement(By.XPath("//option[@value='New York']")).Text;
-            var select3 = driver.FindElement(By.XPath("//option[@value='Texas']")).Text;
 
-            string[] ActualResult = { select1, select2, select3 };
+            int ElementsCount = driver.FindElements(By.XPath("//select[@name='States']/option")).Count;
 
-            Assert.AreEqual(ExpectedResult, ActualResult);
+            string[] MultiSelectDropdown = new string[ElementsCount];
+            for (var i = 1; i <= ElementsCount; i++)
+            {
+                MultiSelectDropdown[i-1] = driver.FindElement(By.XPath("//select[@name='States']/option[" + i + "]")).Text;
+            }
+
+            Random random = new Random();
+            string[] randomvalueslist = new string[3];
+            for (var i = 0; i < 3; i++)
+            {
+                int RandomIndex = random.Next(MultiSelectDropdown.Length);
+                randomvalueslist[i] = MultiSelectDropdown[RandomIndex];
+                Console.WriteLine($"{randomvalueslist[i]}");
+            }
+            Assert.NotNull(randomvalueslist);
         }
 
         [Test]
@@ -109,8 +119,6 @@ namespace LoginTests
 
             driver.FindElement(By.CssSelector("#save")).Click();
 
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-
             Assert.IsTrue(wait.Until(e => e.FindElement(By.XPath("//div[contains(text(),'First Name')]"))).Displayed);
         }
 
@@ -121,7 +129,6 @@ namespace LoginTests
 
             driver.FindElement(By.CssSelector("#cricle-btn")).Click();
 
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
             wait.Until(e => e.FindElement(By.XPath("//input[@id='cricleinput'][@value>='50']")));
 
             driver.Navigate().Refresh();
@@ -130,7 +137,7 @@ namespace LoginTests
         [Test]
         public void ReturnListOfCustomObjects()
         {
-            Task9 list = new Task9(driver);
+            EmployeesFromTable list = new EmployeesFromTable(driver);
 
             driver.Url = "https://demo.seleniumeasy.com/table-sort-search-demo.html";
 

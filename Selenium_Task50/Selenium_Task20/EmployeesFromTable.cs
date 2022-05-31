@@ -7,15 +7,16 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System.Threading;
 using System.Text.RegularExpressions;
+using OpenQA.Selenium.Support.UI;
 
 namespace Selenium_Task50
 {
-    public class Task9
+    public class EmployeesFromTable
     {
         public List<Employee> Employees { get; }
         public IWebDriver driver;
 
-        public Task9(IWebDriver _driver)
+        public EmployeesFromTable(IWebDriver _driver)
         {
             driver = _driver;
             Employees = new List<Employee>();
@@ -59,7 +60,7 @@ namespace Selenium_Task50
                     }
 
                     driver.FindElement(By.XPath("//a[@class='paginate_button next']")).Click();
-                    Thread.Sleep(5000);
+                    driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
                     CountDisplayedElements = driver.FindElements(By.XPath("//tr[@class='odd']|//tr[@class='even']")).Count;
 
                 }
