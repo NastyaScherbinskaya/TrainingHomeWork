@@ -52,10 +52,11 @@ namespace LoginTests
         {
             driver.Url = "https://demo.seleniumeasy.com/basic-select-dropdown-demo.html";
 
-            int ElementsCount = driver.FindElements(By.XPath("//select[@name='States']/option")).Count;
+            int MultiSelectedElementsCount = driver.FindElements(By.XPath("//select[@name='States']/option")).Count;
+            IWebElement MultiSelectedElements = driver.FindElement(By.XPath("//select[@name='States']"));
 
-            string[] MultiSelectDropdown = new string[ElementsCount];
-            for (var i = 1; i <= ElementsCount; i++)
+            string[] MultiSelectDropdown = new string[MultiSelectedElementsCount];
+            for (var i = 1; i <= MultiSelectedElementsCount; i++)
             {
                 MultiSelectDropdown[i-1] = driver.FindElement(By.XPath("//select[@name='States']/option[" + i + "]")).Text;
             }
@@ -66,9 +67,23 @@ namespace LoginTests
             {
                 int RandomIndex = random.Next(MultiSelectDropdown.Length);
                 randomvalueslist[i] = MultiSelectDropdown[RandomIndex];
-                Console.WriteLine($"{randomvalueslist[i]}");
             }
-            Assert.NotNull(randomvalueslist);
+            var orderedrandomvalueslist = from i in randomvalueslist orderby i select i;
+
+            var selectObject = new SelectElement(MultiSelectedElements);
+            selectObject.SelectByText(randomvalueslist[0]);
+            selectObject.SelectByText(randomvalueslist[1]);
+            selectObject.SelectByText(randomvalueslist[2]);
+
+            var allSelectedOptions = selectObject.AllSelectedOptions;
+            string[] selectedValues = new string[3];
+
+            for (var i = 0; i < 3; i++)
+            {
+                selectedValues[i] = allSelectedOptions[i].Text;
+            }
+
+            Assert.AreEqual(selectedValues, orderedrandomvalueslist);
         }
 
         [Test]
@@ -118,8 +133,11 @@ namespace LoginTests
             driver.Url = "https://demo.seleniumeasy.com/dynamic-data-loading-demo.html";
 
             driver.FindElement(By.CssSelector("#save")).Click();
+            var FirstNameLocator = By.XPath("//div[contains(text(),'First Name')]");
 
-            Assert.IsTrue(wait.Until(e => e.FindElement(By.XPath("//div[contains(text(),'First Name')]"))).Displayed);
+            wait.Until(e => e.FindElement(FirstNameLocator));
+
+            Assert.IsTrue(driver.FindElement(FirstNameLocator).Displayed);
         }
 
         [Test]
@@ -137,7 +155,7 @@ namespace LoginTests
         [Test]
         public void ReturnListOfCustomObjects()
         {
-            EmployeesFromTable list = new EmployeesFromTable(driver);
+            Office list = new Office(driver);
 
             driver.Url = "https://demo.seleniumeasy.com/table-sort-search-demo.html";
 

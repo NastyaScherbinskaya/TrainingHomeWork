@@ -11,30 +11,28 @@ using OpenQA.Selenium.Support.UI;
 
 namespace Selenium_Task50
 {
-    public class EmployeesFromTable
+    public class Office
     {
-        public List<Employee> Employees { get; }
+        public List<Employee> employees { get; }
         public IWebDriver driver;
 
-        public EmployeesFromTable(IWebDriver _driver)
+        public Office(IWebDriver _driver)
         {
             driver = _driver;
-            Employees = new List<Employee>();
+            employees = new List<Employee>();
         }
         public void DisplayElementWithConditions()
         {
             var AgeValue = 50;
             var SalaryValue = 100000;
 
-
-           var result = Employees.Where(x => x.Age > AgeValue && x.Salary <= SalaryValue).ToArray();
+            var result = employees.Where(x => x.Age > AgeValue && x.Salary <= SalaryValue).ToArray();
 
             foreach (var item in result)
             {
                 Console.WriteLine($"Name - {item.Name}, Position - {item.Position}, Office - {item.Office}");
             }
         }
-
         public void GetListEmployeesFromAllPages()
         {
             var CountElementShouldBeDisplayed = driver.FindElement(By.XPath("//option[@value='10']")).Text;
@@ -56,13 +54,12 @@ namespace Selenium_Task50
                         var NewStartDate = driver.FindElement(By.XPath("//tr[" + i + "][@class='odd']/td[5]|//tr[" + i + "][@class='even']/td[5]")).Text;
                         var NewSalary = driver.FindElement(By.XPath("//tr[" + i + "][@class='odd']/td[6]|//tr[" + i + "][@class='even']/td[6]")).Text;
 
-                        Employees.Add(new Employee(NewName, NewPosition, NewOffice, Convert.ToInt32(NewAge), NewStartDate, int.Parse(Regex.Replace(NewSalary, @"[$,y/]", ""))));
+                        employees.Add(new Employee(NewName, NewPosition, NewOffice, Convert.ToInt32(NewAge), NewStartDate, int.Parse(Regex.Replace(NewSalary, @"[$,y/]", ""))));
                     }
 
                     driver.FindElement(By.XPath("//a[@class='paginate_button next']")).Click();
                     driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
                     CountDisplayedElements = driver.FindElements(By.XPath("//tr[@class='odd']|//tr[@class='even']")).Count;
-
                 }
                 else if (CountDisplayedElements < CountElementShouldBeDisplayedInt && CountDisplayedElements > 0)
                 {
@@ -75,7 +72,7 @@ namespace Selenium_Task50
                         var NewStartDate = driver.FindElement(By.XPath("//tr[" + i + "][@class='odd']/td[5]|//tr[" + i + "][@class='even']/td[5]")).Text;
                         var NewSalary = driver.FindElement(By.XPath("//tr[" + i + "][@class='odd']/td[6]|//tr[" + i + "][@class='even']/td[6]")).Text;
 
-                        Employees.Add(new Employee(NewName, NewPosition, NewOffice, Convert.ToInt32(NewAge), NewStartDate, int.Parse(Regex.Replace(NewSalary, @"[$,y/]", ""))));
+                        employees.Add(new Employee(NewName, NewPosition, NewOffice, Convert.ToInt32(NewAge), NewStartDate, int.Parse(Regex.Replace(NewSalary, @"[$,y/]", ""))));
                     }
                     value = false;
                 }
