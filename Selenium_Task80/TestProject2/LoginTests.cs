@@ -20,7 +20,9 @@ namespace LoginTests
             driver = new ChromeDriver();
             driver.Url = "https://www.yandex.com";
             Screenshot screenshot = ((ITakesScreenshot)driver).GetScreenshot();
-            var Path = Directory.GetCurrentDirectory().Replace("TestProject2\\bin\\Debug\\net5.0", "") + "Screenshot\\";
+
+            var FullPath = Directory.GetCurrentDirectory();
+            var Path = FullPath.Substring(0,  FullPath.LastIndexOf("Selenium_Task80")) + "Selenium_Task80\\Screenshot\\";
             screenshot.SaveAsFile(Path + "screenshot" + "_" + DateTime.Now.ToString("dd_MMMM_hh_mm_ss_tt") + ".jpg", ScreenshotImageFormat.Jpeg);
         }
 
