@@ -8,6 +8,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 
+
 namespace Selenium_Task70
 {
     public class LoginPage
@@ -25,13 +26,14 @@ namespace Selenium_Task70
 
         public void GoToCabinet(string username, string password)
         {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             driver.FindElement(UsernameFieldLocator).SendKeys(username);
             driver.FindElement(LoginButtonLocator).Click();
-            new System.Threading.ManualResetEvent(false).WaitOne(5000);
+
+            Task.Delay(5000).Wait();
 
             driver.FindElement(passwordFieldLocator).SendKeys(password);
             driver.FindElement(LoginButtonLocator).Click();
-            new System.Threading.ManualResetEvent(false).WaitOne(5000);
         }
     }
 }

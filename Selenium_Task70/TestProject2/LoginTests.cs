@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 using Selenium_Task70;
 using System.Threading;
 
@@ -31,8 +32,6 @@ namespace LoginTests
             LoginPage loginPage = homepage.GoToLoginPage();
 
             loginPage.GoToCabinet(username, password);
-
-            Assert.IsTrue(homepage.UserAvatar().Displayed);
         }
 
         [Test]
