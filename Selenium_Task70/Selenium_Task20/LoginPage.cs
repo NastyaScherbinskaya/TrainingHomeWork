@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 
 
 namespace Selenium_Task70
@@ -30,7 +31,8 @@ namespace Selenium_Task70
             driver.FindElement(UsernameFieldLocator).SendKeys(username);
             driver.FindElement(LoginButtonLocator).Click();
 
-            Task.Delay(5000).Wait();
+            wait.Until(ExpectedConditions.ElementIsVisible(passwordFieldLocator));
+            wait.Until(ExpectedConditions.ElementToBeClickable(passwordFieldLocator));
 
             driver.FindElement(passwordFieldLocator).SendKeys(password);
             driver.FindElement(LoginButtonLocator).Click();
