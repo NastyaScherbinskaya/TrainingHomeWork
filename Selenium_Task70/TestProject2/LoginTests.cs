@@ -9,35 +9,27 @@ namespace LoginTests
 {
     public class Tests
     {
+        ManageBrowser ManageBrowser = new ManageBrowser();
         public IWebDriver driver;
-
-        [SetUp]
-        public void BeginTest()
-        {
-            driver = new ChromeDriver();
-            driver.Url = "https://www.yandex.com";
-        }
-
-        [TearDown]
-        public void EndTest()
-        {
-            driver.Close();
-        }
 
         [Test]
         [TestCase("kostyukevitch-marija", "kostyukevitch_marija")]
         public void SuccessfulLogin(string username, string password)
         {
+            driver = ManageBrowser.BeginTest();
             HomePage homepage = new HomePage(driver);
             LoginPage loginPage = homepage.GoToLoginPage();
 
             loginPage.GoToCabinet(username, password);
+
+            ManageBrowser.EndTest();
         }
 
         [Test]
         [TestCase("kostyukevitch-marija", "kostyukevitch_marija")]
         public void LogOut(string username, string password)
         {
+            driver = ManageBrowser.BeginTest();
             HomePage homepage = new HomePage(driver);
             LoginPage loginPage = homepage.GoToLoginPage();
 
@@ -45,6 +37,8 @@ namespace LoginTests
 
             homepage.Logout();
             Assert.IsTrue(homepage.LoginTitle().Displayed);
+
+            ManageBrowser.EndTest();
         }
     }
 }
