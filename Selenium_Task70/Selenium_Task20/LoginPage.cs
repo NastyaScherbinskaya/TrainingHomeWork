@@ -12,7 +12,7 @@ using SeleniumExtras.WaitHelpers;
 
 namespace Selenium_Task70
 {
-    public class LoginPage : BaseClass 
+    public class LoginPage : BasePage 
     {
         By UsernameFieldLocator = By.XPath("//input[@type='text']");
         By LoginButtonLocator = By.XPath("//button[@id='passp:sign-in']");

@@ -16,20 +16,20 @@ namespace LoginTests
         [TestCase("kostyukevitch-marija", "kostyukevitch_marija")]
         public void SuccessfulLogin(string username, string password)
         {
-            driver = ManageBrowser.BeginTest();
+            driver = ManageBrowser.BeforeTest();
             HomePage homepage = new HomePage(driver);
             LoginPage loginPage = homepage.GoToLoginPage();
 
             loginPage.GoToCabinet(username, password);
 
-            ManageBrowser.EndTest();
+            ManageBrowser.AfterTest();
         }
 
         [Test]
         [TestCase("kostyukevitch-marija", "kostyukevitch_marija")]
         public void LogOut(string username, string password)
         {
-            driver = ManageBrowser.BeginTest();
+            driver = ManageBrowser.BeforeTest();
             HomePage homepage = new HomePage(driver);
             LoginPage loginPage = homepage.GoToLoginPage();
 
@@ -38,7 +38,7 @@ namespace LoginTests
             homepage.Logout();
             Assert.IsTrue(homepage.LoginTitle().Displayed);
 
-            ManageBrowser.EndTest();
+            ManageBrowser.AfterTest();
         }
     }
 }

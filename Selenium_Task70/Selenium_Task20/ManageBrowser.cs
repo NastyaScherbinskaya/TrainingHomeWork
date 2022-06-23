@@ -12,7 +12,7 @@ namespace Selenium_Task70
     {
         public IWebDriver driver;
 
-        public IWebDriver BeginTest()
+        public IWebDriver BeforeTest()
         {
             driver = new ChromeDriver();
             driver.Url = "https://www.yandex.com";
@@ -20,7 +20,7 @@ namespace Selenium_Task70
             driver.Manage().Window.Maximize();
             return driver;
         } 
-        public void EndTest()
+        public void AfterTest()
         {
             driver.Close();
         }

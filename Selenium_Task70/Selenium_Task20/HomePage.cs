@@ -8,7 +8,7 @@ using OpenQA.Selenium.Chrome;
 
 namespace Selenium_Task70
 {
-    public class HomePage : BaseClass
+    public class HomePage : BasePage
     {
         By DisplayingUserMenuLocator = By.XPath("//a[@class='home-link usermenu-link__control home-link_black_yes']");
         By LogoutOptionLocator = By.XPath("//a[@aria-label='Выйти']");
